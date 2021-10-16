@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Chart title="Рыночная цена" type="market-price" class="chart-card" />
+    <Chart title="Сложность сети" type="difficulty" class="chart-card" />
+    <Chart
+      title="Стоимость транзакции"
+      type="cost-per-transaction"
+      class="chart-card"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Chart from "@/components/Chart";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Chart,
   },
 };
 </script>
@@ -21,8 +26,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.chart-card + .chart-card {
+  margin-top: 50px;
 }
 </style>
